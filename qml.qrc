@@ -1,0 +1,12 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>create-component.js</file>
+        <file>MyComponent.qml</file>
+        <file>ClearButton.qml</file>
+        <file>HintButton.qml</file>
+        <file>InRect.qml</file>
+        <file>OutRect.qml</file>
+        <file>ButtonRect.qml</file>
+    </qresource>
+</RCC>
