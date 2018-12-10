@@ -27,7 +27,7 @@ var _callback;
 var _parent;
 var _source;
 
-function create(source, parent, callback, text)
+function create(source, parent, callback, text, list, particles)
 {
     _parent = parent;
     _callback = callback;
@@ -36,19 +36,19 @@ function create(source, parent, callback, text)
     _component = Qt.createComponent(source);
     if (_component.status === Component.Ready
         || _component.status === Component.Error) {
-        createDone(text);
+        createDone(text, list, particles);
     }
     else
         _component.statusChanged.connect(createDone);
 }
 
-function createDone(displayText)
+function createDone(displayText, list, particles)
 {
     if (_component.status === Component.Ready)
     {
-        var obj = _component.createObject(_parent, {"x": 100, "y": 100, "text": displayText});
+        var obj = _component.createObject(_parent, {"x": 100, "y": 100, "text": displayText, "list": list, "particles": particles});
         if (obj !== null)
-            _callback(obj, _source, displayText);
+            _callback(obj, _source, displayText, list, particles);
         else
             console.log("Error creating object: " + _source);
 

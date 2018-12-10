@@ -8,5 +8,11 @@
         <file>InRect.qml</file>
         <file>OutRect.qml</file>
         <file>ButtonRect.qml</file>
+        <file>UndoButton.qml</file>
+        <file>resources/images/backdrop-background-orange-132197.jpg</file>
+        <file>resources/images/personal_note.png</file>
+        <file>resources/sounds/success.wav</file>
+        <file>resources/sounds/right.wav</file>
+        <file>resources/images/star.png</file>
     </qresource>
 </RCC>

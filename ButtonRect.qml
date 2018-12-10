@@ -5,12 +5,13 @@ import "create-component.js" as CreateObject
 
 Rectangle {
     id: buttonRect
-    anchors.top: outRect.bottom
+    anchors.top: inRect.bottom
     anchors.margins: 100
     width: Screen.width
 
     property alias hintButton: hintButton
     property alias clearButton: clearButton
+    property alias undoButton: undoButton
 
     Row {
         id: row
@@ -21,6 +22,9 @@ Rectangle {
         }
         ClearButton {
             id: clearButton
+        }
+        UndoButton {
+            id: undoButton
         }
     }
 }

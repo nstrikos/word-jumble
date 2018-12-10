@@ -60,7 +60,7 @@ Button {
                 inList.get(mainRect.counter).obj.destroy();
                 inList.remove(mainRect.counter);
                 CreateObject.create("MyComponent.qml", outRect.row, mainRect.itemAdded2,
-                                    mainRect.letter)
+                                    mainRect.letter, "out", true)
                 done = true
             }
             mainRect.counter++
