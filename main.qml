@@ -11,6 +11,14 @@ Window {
     height: Screen.height
     title: qsTr("Hello World")
 
+    onWidthChanged: {
+        mainRect.setLetterWidth()
+    }
+
+    onHeightChanged: {
+        mainRect.setLetterWidth()
+    }
+
     Timer {
         id: timer
         interval: 1000
@@ -72,10 +80,52 @@ Window {
         enabled: false
         opacity: 0
         anchors.fill: parent
+        height: Window.height
+
+        property int length
+        property int letterWidth
+
+        onLetterWidthChanged: {
+            updateLetterWidth()
+        }
+
+        function updateLetterWidth() {
+            for (var i = 0; i < inList.count; i++) {
+                var obj = inList.get(i).obj
+                obj.width = letterWidth
+                obj.height = 1.5 * obj.width
+            }
+            for (i = 0; i < outList.count; i++) {
+                obj = outList.get(i).obj
+                obj.width = letterWidth
+                obj.height = 1.5 * obj.width
+            }
+        }
+
+        function setLetterWidth() {
+            var w = Window.width
+            var margin = 20
+            var spacing = Window.width / 100
+            var width = (w - margin - length * spacing) / length
+            if (width > 100)
+                width = 100
+            console.log("Window width: " + w)
+            console.log("Word length: " + length)
+            console.log("Letter width: " + letterWidth)
+            letterWidth = width
+            //for (var i = 0; i < inList.count; i++) {
+            //    var obj = inList.get(i).obj
+            //    obj.width = width
+            //}
+            //        for (i = 0; i < outList.count; i++) {
+            //            obj = outList.get(i).obj
+            //            obj.width = width
+            //        }
+        }
 
         function test(text)
         {
-            console.log("test")
+            //console.log("test")
 
             CreateObject.create("MyComponent.qml", outRect.row, itemAdded2,
                                 text, "out", true)
@@ -109,6 +159,7 @@ Window {
         Button {
             id: backButton
             text: "Back"
+            height: Window.height / 10
             onClicked: {
                 mainRect.opacity = 0
                 introRect.opacity = 1
@@ -121,7 +172,7 @@ Window {
                 text: "Back"
                 horizontalAlignment: Text.AlignHCenter
                 verticalAlignment: Text.AlignVCenter
-                font.pixelSize: 25
+                font.pixelSize: root.height * root.width / 25000
                 color: "blue"
                 anchors.fill: parent
                 antialiasing: true
@@ -141,15 +192,17 @@ Window {
         OutRect {
             id: outRect
             anchors.top: backButton.bottom
+            height: Window.height * 25 / 100
         }
 
         InRect {
             id: inRect
-            //anchors.top: backButton.bottom
+            height: Window.height * 25 / 100
         }
 
         ButtonRect {
             id: buttonRect
+            height: Window.height * 2 / 10
         }
 
         SoundEffect {
@@ -167,6 +220,8 @@ Window {
             targetString = myClass.jumble
             word = myClass.word
             hintsAvail = word.length
+            length = word.length
+            setLetterWidth()
             hintsUsed = 0
             buttonRect.hintButton.enabled = true
             buttonRect.undoButton.enabled = false
@@ -174,17 +229,25 @@ Window {
                 CreateObject.create("MyComponent.qml", inRect.row, itemAdded,
                                     targetString.charAt(counter), "in", false)
             }
+            setLetterWidth()
+            updateLetterWidth()
         }
 
         function itemAdded(obj, source, text, hint, list, particles) {
             inList.append({"obj": obj, "source": source, "text": text, "list": list, "particles": particles})
             obj.list = "in"
+            obj.width = letterWidth
+            setLetterWidth()
+            updateLetterWidth()
             //obj.particles = false
         }
 
         function itemAdded2(obj, source, text, hint, list, particles) {
             outList.append({"obj": obj, "source": source, "text": text, "list": list, "particles": particles})
             obj.list = "out"
+            obj.width = letterWidth
+            setLetterWidth()
+            updateLetterWidth()
             //obj.color = "red"
             //obj.backColor = "light yellow"
             //obj.particles = false
@@ -200,6 +263,9 @@ Window {
         function itemAdded3(obj, source, text, hint, list) {
             inList.insert(0, {"obj": obj, "source": source, "text": text, "list": list})
             obj.list = "in"
+            obj.width = letterWidth
+            setLetterWidth()
+            updateLetterWidth()
         }
 
         function clearItems() {
@@ -254,7 +320,7 @@ Window {
 
 
             if (outList.count === word.length) {
-                console.log("Length is equal!")
+                //console.log("Length is equal!")
 
                 answer = ""
                 for (counter = 0; counter < outList.count; counter++) {
@@ -264,7 +330,7 @@ Window {
                 if (answer === word) {
                     //firstButton.enabled = true
                     buttonRect.hintButton.enabled = false
-                    console.log("Ok")
+                    //console.log("Ok")
                     while(outList.count > 0) {
                         outList.get(0).obj.destroy();
                         outList.remove(0);

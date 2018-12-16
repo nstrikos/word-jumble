@@ -6,7 +6,9 @@ import "create-component.js" as CreateObject
 Button {
     id: root
     width: 200
+    height: Window.height / 10
     //anchors.top: clearButton.bottom
+    anchors.verticalCenter: parent.verticalCenter
     text: "Hint"
     enabled: false
     onClicked: hintClicked()
@@ -16,7 +18,7 @@ Button {
         text: root.text
         horizontalAlignment: Text.AlignHCenter
         verticalAlignment: Text.AlignVCenter
-        font.pixelSize: 25
+        font.pixelSize: root.height * root.width / 250
         color: {
             if (enabled === true)
                 return "blue"
@@ -28,7 +30,7 @@ Button {
     }
 
     background: Rectangle {
-        implicitHeight: 100
+        implicitHeight: Window.height / 10
         radius: 10
         border.color:   {          if (enabled === true)
                 return "blue"
@@ -40,7 +42,7 @@ Button {
             else
                 return "light grey"
         }
-        border.width: 5
+        border.width: Window.height / 200
     }
 
     function hintClicked() {

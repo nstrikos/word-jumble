@@ -9,7 +9,7 @@ import "create-component.js" as CreateObject
 Button {
     id: root
     text: ""
-    width: 100
+    width: 50
 
     height: inRect.height
     anchors.top: parent.top
@@ -18,11 +18,11 @@ Button {
     property string list
     property bool particles2
 
-    onParticles2Changed: {
-        console.log(particles2)
-    }
+    //onParticles2Changed: {
+    //console.log(particles2)
+    //}
 
-    onListChanged: console.log(list)
+    //onListChanged: console.log(list)
 
 
 
@@ -33,7 +33,7 @@ Button {
     //onShowParticlesChanged: ok()
 
     function ok() {
-        console.log("ok")
+        //console.log("ok")
     }
 
     Accessible.name: "My button"
@@ -43,7 +43,9 @@ Button {
         text: root.text
         horizontalAlignment: Text.AlignHCenter
         verticalAlignment: Text.AlignVCenter
-        font.pixelSize: 40
+        font.pixelSize: { if ( (parent.width * parent.height / 200) > 20) parent.width * parent.height / 200
+            else
+                20}
         color: root.color
         anchors.fill: parent
         antialiasing: true
@@ -66,13 +68,13 @@ Button {
 
     onClicked: {
         //root.clearItems()
-        console.log("clicked")
+        //console.log("clicked")
 
         if (list === "in") {
 
 
-//            CreateObject.create("MyComponent.qml", outRect.row, mainRect.itemAdded2,
-//                                text, "out", true)
+            //            CreateObject.create("MyComponent.qml", outRect.row, mainRect.itemAdded2,
+            //                                text, "out", true)
             mainRect.test(text)
             var done = false
             var counter = 0

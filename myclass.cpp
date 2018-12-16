@@ -4,8 +4,8 @@ MyClass::MyClass()
 {
     m_xStart = 5;
 
-   words[0] = "ΑΓΓΛΙΑ";
-   words[1] = "ΑΖΕΡΜΠΑΙΤΖΑΝ";
+   words[0] = "ΑΖΕΡΜΠΑΙΤΖΑΝ";
+   words[1] = "ΑΓΓΛΙΑ";
    words[2] = "ΑΙΓΥΠΤΟΣ";
    words[3] = "ΑΙΘΙΟΠΙΑ";
    words[4] = "ΑΙΤΗ";
@@ -20,7 +20,6 @@ MyClass::MyClass()
    words[13] = "αφγανισταν";
    words[14] = "βατικανο";
    words[15] = "βελγιο";
-
 }
 
 void MyClass::setXStart(double arg1)

@@ -7,6 +7,9 @@ Button {
     id: root
     text: "Clear"
     width: 200
+    height: Window.height / 10
+    //anchors.top: clearButton.bottom
+    anchors.verticalCenter: parent.verticalCenter
     enabled: false
     onClicked: mainRect.clearItems()
 
@@ -15,7 +18,7 @@ Button {
         text: root.text
         horizontalAlignment: Text.AlignHCenter
         verticalAlignment: Text.AlignVCenter
-        font.pixelSize: 25
+        font.pixelSize: root.height * root.width / 250
         color: {
             if (enabled === true)
                 return "blue"
@@ -41,6 +44,6 @@ Button {
             else
                 return "light grey"
         }
-        border.width: 5
+        border.width: Window.height / 200
     }
 }

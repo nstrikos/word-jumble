@@ -9,12 +9,13 @@ Item {
     property alias row: row
 
     anchors.top: outRect.bottom
-    anchors.margins: 50
-    width: Screen.width
-    height: 100
+    anchors.margins: Window.height / 20
+    width: Window.width
+    height: Window.height * 2 / 10
+
     Row {
         id: row
         anchors.centerIn: parent
-        spacing: 10
+        spacing: Window.width / 100
     }
 }

@@ -1,6 +1,6 @@
 QT += quick
 CONFIG += c++11
-CONFIG += big_resources
+#CONFIG += big_resources
 
 # The following define makes your compiler emit warnings if you use
 # any feature of Qt which as been marked deprecated (the exact warnings
@@ -32,3 +32,31 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 HEADERS += \
     myclass.h
+
+DISTFILES += \
+    android/AndroidManifest.xml \
+    android/gradle/wrapper/gradle-wrapper.jar \
+    android/gradlew \
+    android/res/values/libs.xml \
+    android/build.gradle \
+    android/gradle/wrapper/gradle-wrapper.properties \
+    android/gradlew.bat \
+    ../../../../../media/data/nick/Desktop/word-jumble/word-jumble/android/AndroidManifest.xml \
+    ../../../../../media/data/nick/Desktop/word-jumble/word-jumble/android/gradle/wrapper/gradle-wrapper.jar \
+    ../../../../../media/data/nick/Desktop/word-jumble/word-jumble/android/gradlew \
+    ../../../../../media/data/nick/Desktop/word-jumble/word-jumble/android/res/values/libs.xml \
+    ../../../../../media/data/nick/Desktop/word-jumble/word-jumble/android/build.gradle \
+    ../../../../../media/data/nick/Desktop/word-jumble/word-jumble/android/gradle/wrapper/gradle-wrapper.properties \
+    ../../../../../media/data/nick/Desktop/word-jumble/word-jumble/android/gradlew.bat \
+    ../../../../media/data/nick/Desktop/word-jumble/android/AndroidManifest.xml \
+    ../../../../media/data/nick/Desktop/word-jumble/android/gradle/wrapper/gradle-wrapper.jar \
+    ../../../../media/data/nick/Desktop/word-jumble/android/gradlew \
+    ../../../../media/data/nick/Desktop/word-jumble/android/res/values/libs.xml \
+    ../../../../media/data/nick/Desktop/word-jumble/android/build.gradle \
+    ../../../../media/data/nick/Desktop/word-jumble/android/gradle/wrapper/gradle-wrapper.properties \
+    ../../../../media/data/nick/Desktop/word-jumble/android/gradlew.bat
+
+contains(ANDROID_TARGET_ARCH,x86) {
+    ANDROID_PACKAGE_SOURCE_DIR = \
+        $$PWD/android
+}

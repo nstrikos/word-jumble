@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<!-- Written by QtCreator 4.8.0, 2018-12-11T23:50:00. -->
+<!-- Written by QtCreator 4.8.0, 2018-12-12T20:48:32. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
-  <value type="QByteArray">{0e56e223-6fef-4070-9dd2-92258d304b82}</value>
+  <value type="QByteArray">{1392d552-2927-4e1a-8b56-e6fb2d11eb3f}</value>
  </data>
  <data>
   <variable>ProjectExplorer.Project.ActiveTarget</variable>
@@ -64,8 +64,8 @@
   <valuemap type="QVariantMap">
    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">Android for armeabi-v7a (Clang Qt 5.12.0 for Android ARMv7)</value>
    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">Android for armeabi-v7a (Clang Qt 5.12.0 for Android ARMv7)</value>
-   <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">{c0b19df3-163f-4168-b189-9fb37545ac6b}</value>
-   <value type="int" key="ProjectExplorer.Target.ActiveBuildConfiguration">1</value>
+   <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">{444888b9-909c-43a1-a0a5-5708d99a0c42}</value>
+   <value type="int" key="ProjectExplorer.Target.ActiveBuildConfiguration">0</value>
    <value type="int" key="ProjectExplorer.Target.ActiveDeployConfiguration">0</value>
    <value type="int" key="ProjectExplorer.Target.ActiveRunConfiguration">0</value>
    <valuemap type="QVariantMap" key="ProjectExplorer.Target.BuildConfiguration.0">
@@ -346,14 +346,12 @@
      <value type="int">13</value>
      <value type="int">14</value>
     </valuelist>
-    <value type="QString" key="Android.AmStartArgsKey"></value>
-    <valuelist type="QVariantList" key="Android.PostStartShellCmdListKey"/>
-    <valuelist type="QVariantList" key="Android.PreStartShellCmdListKey"/>
-    <value type="int" key="PE.EnvironmentAspect.Base">0</value>
+    <value type="int" key="PE.EnvironmentAspect.Base">2</value>
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">test</value>
+    <value type="QString" key="ProjectExplorer.CustomExecutableRunConfiguration.Executable"></value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">Custom Executable</value>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName"></value>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.AndroidRunConfiguration:/home/nick/Desktop/word-jumble/word-jumble/test.pro</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">ProjectExplorer.CustomExecutableRunConfiguration</value>
     <value type="QString" key="RunConfiguration.Arguments"></value>
     <value type="uint" key="RunConfiguration.QmlDebugServerPort">3768</value>
     <value type="bool" key="RunConfiguration.UseCppDebugger">false</value>
@@ -361,6 +359,8 @@
     <value type="bool" key="RunConfiguration.UseMultiProcess">false</value>
     <value type="bool" key="RunConfiguration.UseQmlDebugger">false</value>
     <value type="bool" key="RunConfiguration.UseQmlDebuggerAuto">true</value>
+    <value type="QString" key="RunConfiguration.WorkingDirectory"></value>
+    <value type="QString" key="RunConfiguration.WorkingDirectory.default"></value>
    </valuemap>
    <value type="int" key="ProjectExplorer.Target.RunConfigurationCount">1</value>
   </valuemap>
@@ -370,8 +370,8 @@
   <valuemap type="QVariantMap">
    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">Android for x86 (Clang Qt 5.12.0 for Android x86)</value>
    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">Android for x86 (Clang Qt 5.12.0 for Android x86)</value>
-   <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">{59ce7e1e-6db0-49b2-b3b8-77bdb86ab444}</value>
-   <value type="int" key="ProjectExplorer.Target.ActiveBuildConfiguration">1</value>
+   <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">{dd041430-a6da-4091-9980-7e4f4ebcfe35}</value>
+   <value type="int" key="ProjectExplorer.Target.ActiveBuildConfiguration">0</value>
    <value type="int" key="ProjectExplorer.Target.ActiveDeployConfiguration">0</value>
    <value type="int" key="ProjectExplorer.Target.ActiveRunConfiguration">0</value>
    <valuemap type="QVariantMap" key="ProjectExplorer.Target.BuildConfiguration.0">
@@ -918,7 +918,7 @@
     <value type="bool" key="RunConfiguration.UseQmlDebugger">false</value>
     <value type="bool" key="RunConfiguration.UseQmlDebuggerAuto">true</value>
     <value type="QString" key="RunConfiguration.WorkingDirectory"></value>
-    <value type="QString" key="RunConfiguration.WorkingDirectory.default"></value>
+    <value type="QString" key="RunConfiguration.WorkingDirectory.default">/home/nick/Desktop/word-jumble/build-test-Desktop_Qt_5_12_0_GCC_64bit-Debug</value>
    </valuemap>
    <value type="int" key="ProjectExplorer.Target.RunConfigurationCount">1</value>
   </valuemap>
